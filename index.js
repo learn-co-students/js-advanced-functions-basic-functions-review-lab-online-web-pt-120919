@@ -19,11 +19,12 @@ const Calculator = {
     "divide": function(a, b) { return a / b }
 }
 
-function actionApplyer(int, array){
-    if (array.length === 0){
-        return int
+function actionApplyer(integer, array){
+    let int = integer
+
+    for (const fn of array ){
+        int = fn(int)
     }
-    else if (int === 13){
-        return 4
-    }
+
+    return int
 }
